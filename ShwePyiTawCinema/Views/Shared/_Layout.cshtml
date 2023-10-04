@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Shwe Pyi Taw Cinema</title>
+    @*<link href="@Url.Content("~/favicon.ico")" rel="shortcut icon" type="image/x-icon" />*@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#00ffff">
+    <script src="@Url.Content("~/lib/jquery/dist/jquery-3.7.1.min.js")" type="text/javascript"></script>
+    <script type="text/javascript">
+        debugger;
+        $(document).ready(function () {
+            $("#UserName").focus();
+
+        })
+    </script>
+</head>
+<body class="bg-success p-2" style="--bs-bg-opacity: .5;">
+    <header>
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <img src="~/images/banner.png" alt="Logo" class="d-block w-100 h-50">
+            </div>
+        </nav>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm text-white-50  bg-success p-2 border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Home" asp-action="Index"> <img src="~/images/SPTlogo.ico" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">ShwePyiTawCinema</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex">
+                    <ul class="navbar-nav flex-grow-1 justify-content-center">
+                        @*<li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+        </li>*@
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" asp-area="" asp-controller="Ticket" asp-action="Ticket">Ticket</a>
+                            <ul class="dropdown-menu bg-success p-2 text-primary">
+                                @*<li><a class="dropdown-item" asp-area="" asp-controller="Ticket" asp-action="AddMovieTime">Add Movie Time</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Ticket" asp-action="MovieTimeList">Movie Time List</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="DynamicClass" asp-action="AddClass">Add Class</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="DynamicClass" asp-action="ClassList">Class List</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="ClassType" asp-action="AddClassType">Add Class Type</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="ClassType" asp-action="ClassTypeList">Class Type List</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Ticket" asp-action="AddTicketPrice">Add Ticket Price</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Ticket" asp-action="TicketPriceList">Ticket Price List</a></li>
+                                <li><hr class="dropdown-divider"></li>*@
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Ticket" asp-action="Edit_Delete">Edit/Delete Ticket</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" asp-area="" asp-controller="ClassType" asp-action="K15000">15000 Kyats</a>
+                            <ul class="dropdown-menu bg-success p-2 text-primary">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="ClassType" asp-action="K7500">7500 Kyats</a></li>
+                                <li><hr class="dropdown-divider" style="background-color:#ffffff"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="ClassType" asp-action="K6500">6500 Kyats</a></li>
+                                <li><hr class="dropdown-divider" style="background-color:#ffffff"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="ClassType" asp-action="K5500">5500 Kyats</a></li>
+                                <li><hr class="dropdown-divider" style="background-color:#ffffff"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="ClassType" asp-action="K4500">4500 Kyats</a></li>
+                                <li><hr class="dropdown-divider" style="background-color:#ffffff"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="ClassType" asp-action="K3500">3500 Kyats</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" asp-area="" asp-controller="Movie" asp-action="AddNewMovie">Add New Movie</a>
+                            <ul class="dropdown-menu bg-success p-2 text-primary">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="Movie" asp-action="MovieList">Movie List</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" role="button" data-bs-toggle="dropdown" aria-expanded="false" asp-area="" asp-controller="IncomeExpense" asp-action="DailyIncomeEntry">Daily Income Entry</a>
+                            <ul class="dropdown-menu bg-success p-2 text-primary">
+                                <li><a class="dropdown-item" asp-area="" asp-controller="IncomeExpense" asp-action="DailyExpenseEntry">Daily Expense Entry</a></li>
+                                <li><hr class="dropdown-divider" style="background-color:#ffffff"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="IncomeExpense" asp-action="IncomesByMovie">Incomes By Movie</a></li>
+                                <li><hr class="dropdown-divider" style="background-color:#ffffff"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="IncomeExpense" asp-action="ExpenseByMovie">Expense By Movie</a></li>
+                                <li><hr class="dropdown-divider" style="background-color:#ffffff"></li>
+                                <li><a class="dropdown-item" asp-area="" asp-controller="IncomeExpense" asp-action="IncomesByMovieDate_Time">Incomes By Movie Date/Time</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">                           
+                            <a class="nav-link text-white" asp-area="" asp-controller="Report" asp-action="Index">Report</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>             
+            <div><a class="nav-link text-danger fw-bold bg-white" asp-area="" asp-controller="Account" asp-action="LogIn">Log In</a></div>
+        </nav>
+         
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - Shwe Pyi Taw Cinema - Movie Management System
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
